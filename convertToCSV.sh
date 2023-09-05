@@ -17,7 +17,7 @@ do
     output_file="output_${cur_date}.csv"
     date=$(echo $cur_date | cut -d "-" -f 2)
     
-    if [ $date -lt $start -o $date -gt $end ]; then
+    if [ $date -gt $end -o $date -lt $start ]; then
         continue
     fi
     echo "userId,displayName,mobile,email" > "$output_file"
