@@ -18,7 +18,7 @@ do
     date=$(echo $cur_date | cut -d "-" -f 2)
     
     if [ ${date} -le ${end} -a ${date} -ge ${start} ]; then
-        echo "userId,displayName,mobile,email" > "$output_file"
+        echo "userId,displayName,mobile,email" > "${output_file}"
         json_to_csv "$file" "$output_file"
     fi
 
