@@ -17,10 +17,10 @@ do
     output_file="output_${cur_date}.csv"
     date=$(echo $cur_date | cut -d "-" -f 2)
     
-    if [ $date -gt $end -o $date -lt $start ]; then
-        continue
+    if [ $date -le $end -a $date -ge $start ]; then
+        echo "userId,displayName,mobile,email" > "$output_file"
+        json_to_csv "$file" "$output_file"
     fi
-    echo "userId,displayName,mobile,email" > "$output_file"
-    json_to_csv "$file" "$output_file"
+
 done
 echo "Conversion done !"
