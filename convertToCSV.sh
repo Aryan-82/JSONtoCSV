@@ -17,12 +17,8 @@ do
     output_file="output_${cur_date}.csv"
     date=$(echo $cur_date | cut -d "-" -f 2)
     
-<<<<<<< HEAD
     if [ ${date} -le ${end} -a ${date} -ge ${start} ]; 
     then
-=======
-    if [ ${date} -le ${end} -a $date -ge $start ]; then
->>>>>>> f635319 (Added curly braces)
         echo "userId,displayName,mobile,email" > "$output_file"
         json_to_csv "$file" "$output_file"
     fi
