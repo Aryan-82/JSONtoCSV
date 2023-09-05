@@ -21,6 +21,6 @@ do
         echo "userId,displayName,mobile,email" > "$output_file"
         json_to_csv "$file" "$output_file"
     fi
-    
+
 done
 echo "Conversion done !"
